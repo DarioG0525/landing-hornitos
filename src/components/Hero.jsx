@@ -1,45 +1,22 @@
-import { heroSlide } from '../data/hornitos'
-
 function Hero() {
-  const slide = heroSlide
-
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-[#dcc3af] bg-white"
-    >
-      <div className="mx-auto max-w-[1400px] px-0 py-0">
-        <div className="relative flex min-h-[320px] items-stretch sm:min-h-[360px] lg:min-h-[420px]">
-          <div className="relative w-[38%] overflow-hidden bg-[#f5f0eb]">
-            <img
-              src={slide.image}
-              alt="Productos"
-              className="h-full w-full object-cover object-center"
-            />
-          </div>
+    <section id="top" className="border-b border-[#bdd8cb] bg-[linear-gradient(140deg,#0f3a2c_0%,#165b45_55%,#1f7357_100%)]">
+      <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16">
+        <p className="inline-block rounded-full bg-white/15 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[#d4f8ea]">
+          Organizacion de eventos
+        </p>
+        <h1 className="mt-4 max-w-3xl text-3xl font-black leading-tight text-white sm:text-4xl">
+          Programa tu proximo evento en minutos
+        </h1>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#e3fff4] sm:text-base">
+          Crea experiencias memorables para tu comunidad. Registra nuevos eventos, revisa los que ya tienes
+          programados y elimina los que ya no necesitas, todo desde un solo panel sencillo.
+        </p>
 
-          <div className="relative flex w-[62%] flex-col items-end justify-center gap-2 bg-gradient-to-l from-white via-white to-[#faf7f3] px-6 py-8 text-right sm:px-8 lg:px-12 lg:py-10">
-            <p className="font-serif text-[2.2rem] leading-[0.95] text-[#ff6a00] italic sm:text-[2.8rem] lg:text-[3.4rem]">
-              {slide.title}
-            </p>
-
-            <p className="font-serif text-[2.4rem] leading-[0.95] font-bold text-[#5a321d] sm:text-[3rem] lg:text-[3.8rem]">
-              {slide.subtitle}
-            </p>
-
-            <p className="mt-1 text-[0.95rem] font-semibold text-[#666] sm:text-[1.1rem] lg:text-[1.3rem]">
-              {slide.description}
-            </p>
-
-            <div className="mt-6 inline-flex rounded-full bg-[#ff6a3e] px-8 py-3 text-xl font-black text-white shadow-lg sm:px-10 sm:py-4 sm:text-2xl lg:text-3xl">
-              {slide.cta}
-            </div>
-          </div>
-
-          <div className="absolute bottom-4 left-4 rounded-[1.5rem] bg-[#5a321d] px-4 py-3 text-white shadow-xl sm:left-6 sm:px-5 sm:py-4 lg:bottom-6 lg:left-8">
-            <p className="text-sm leading-none sm:text-base">{slide.eyebrow}</p>
-            <p className="text-sm font-semibold leading-none text-[#ff6a3e] sm:text-base">{slide.badge}</p>
-          </div>
+        <div className="mt-6 flex flex-wrap gap-2">
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-[0.08em] text-[#11553f]">Agenda facil</span>
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-[0.08em] text-[#11553f]">Gestion centralizada</span>
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-[0.08em] text-[#11553f]">Actualizacion al instante</span>
         </div>
       </div>
     </section>

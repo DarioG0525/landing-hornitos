@@ -1,0 +1,125 @@
+openapi: 3.0.3
+info:
+  title: API de Eventos - Actividad Front-end
+  version: 1.0.0
+  description: >-
+    API REST simulada para listar, crear y eliminar eventos en una aplicacion React.
+servers:
+  - url: http://localhost:3001
+    description: JSON Server local
+paths:
+  /eventos:
+    get:
+      summary: Listar eventos
+      operationId: getEventos
+      tags:
+        - Eventos
+      responses:
+        '200':
+          description: Listado exitoso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Evento'
+    post:
+      summary: Crear evento
+      operationId: postEvento
+      tags:
+        - Eventos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventoInput'
+            examples:
+              ejemplo:
+                value:
+                  titulo: Meetup de React y Arquitectura
+                  fecha: '2026-04-30'
+                  cupos: 60
+                  modalidad: Hibrido
+                  organizador: Comunidad Front-end LATAM
+      responses:
+        '201':
+          description: Evento creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Evento'
+  /eventos/{id}:
+    delete:
+      summary: Eliminar evento
+      operationId: deleteEvento
+      tags:
+        - Eventos
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Evento eliminado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Evento'
+        '404':
+          description: Evento no encontrado
+components:
+  schemas:
+    Evento:
+      type: object
+      required:
+        - id
+        - titulo
+        - fecha
+        - cupos
+        - modalidad
+        - organizador
+      properties:
+        id:
+          type: integer
+          example: 10
+        titulo:
+          type: string
+          example: Meetup de React y Arquitectura
+        fecha:
+          type: string
+          format: date
+          example: '2026-04-22'
+        cupos:
+          type: integer
+          minimum: 5
+          example: 60
+        modalidad:
+          type: string
+          example: Hibrido
+        organizador:
+          type: string
+          example: Comunidad Front-end LATAM
+    EventoInput:
+      type: object
+      required:
+        - titulo
+        - fecha
+        - cupos
+        - modalidad
+        - organizador
+      properties:
+        titulo:
+          type: string
+        fecha:
+          type: string
+          format: date
+        cupos:
+          type: integer
+          minimum: 5
+        modalidad:
+          type: string
+        organizador:
+          type: string

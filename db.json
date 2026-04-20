@@ -1,0 +1,12 @@
+{
+  "eventos": [
+    {
+      "id": "5204",
+      "titulo": "Clase de Ing Web 2",
+      "fecha": "2026-04-25",
+      "cupos": 20,
+      "modalidad": "Presencial",
+      "organizador": "Facultad de ingenieria Uniminuto"
+    }
+  ]
+}

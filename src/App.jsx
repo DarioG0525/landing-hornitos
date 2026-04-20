@@ -1,16 +1,16 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import MenuSection from './components/MenuSection'
+import EventsSection from './components/EventsSection'
 import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-transparent text-[#5a321d]">
+    <div className="min-h-screen bg-transparent text-[#15241f]">
       <Navbar />
 
       <main>
         <Hero />
-        <MenuSection />
+        <EventsSection />
       </main>
 
       <Footer />
